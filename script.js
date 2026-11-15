@@ -1,5 +1,5 @@
-let firstNumber = 0;
-let secondNumber = 0;
+let firstNumber = "";
+let secondNumber = "";
 let operator = null;
 
 //----------------------------------------------- logic for the calculator
@@ -40,5 +40,17 @@ function operate(operator, a, b) {
 }
 
 
-//------------ display
+//------------------------display
+
+const screen = document.getElementById('screen');
+
+const digits = document.querySelectorAll('.digit');
+
+digits.forEach((digit) => {
+    digit.addEventListener('click', () => {
+        firstNumber += digit.textContent;
+        screen.textContent = firstNumber;
+    });
+});
+
 

@@ -1,13 +1,12 @@
-#display {
+#calculator {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 50%;
-    padding-bottom: 50%;
+    padding: 70px;
+    width: 50%;
     background-color: lightpink;
-
 }
 
 .numbers {
