@@ -1,9 +1,6 @@
-
-const firstNumber = document.getElementById("firstNumber");
-const secondNumber = document.getElementById("secondNumber");
-const operator = document.getElementById("operator");
-const result = document.getElementById("result");
-
+let firstNumber = 0;
+let secondNumber = 0;
+let operator = null;
 
 //----------------------------------------------- logic for the calculator
 
@@ -37,5 +34,11 @@ function operate(operator, a, b) {
             return multiply(a, b);
         case "/":
             return divide(a, b);
+            default:
+                return "Error: Invalid operator";
     }
 }
+
+
+//------------ display
+
