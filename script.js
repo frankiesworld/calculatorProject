@@ -53,6 +53,7 @@ function calculate() {
         return;
     }
 
+    result = Math.round(result * 1000) / 1000;
     screen.textContent = result;
 
     firstNumber = String(result);
