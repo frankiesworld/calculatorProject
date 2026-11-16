@@ -85,4 +85,12 @@ equal.addEventListener('click', () => {
     operator = null;
 });
 
+const clear = document.getElementById('clear');
+clear.addEventListener('click', () => {
+    firstNumber = "";
+    secondNumber = "";
+    operator = null;
+    screen.textContent = "0";
+});
+
 
