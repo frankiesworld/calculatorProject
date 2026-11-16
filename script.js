@@ -48,9 +48,41 @@ const digits = document.querySelectorAll('.digit');
 
 digits.forEach((digit) => {
     digit.addEventListener('click', () => {
-        firstNumber += digit.textContent;
-        screen.textContent = firstNumber;
+
+        if (operator === null) {
+            firstNumber += digit.textContent;
+            screen.textContent = firstNumber;
+        } else {
+            secondNumber += digit.textContent;
+            screen.textContent = secondNumber;
+        }
     });
+});
+
+const signs = document.querySelectorAll('.sign');
+signs.forEach((sign) => {
+    sign.addEventListener('click', () => {
+        operator = sign.textContent;
+        screen.textContent = firstNumber + " " + operator;
+    });
+});
+
+const equal = document.getElementById('equal');
+equal.addEventListener('click', () => { 
+
+    if (firstNumber === "" || secondNumber === "" || operator === null) {
+
+        return;
+    }
+
+    let a = parseFloat(firstNumber);
+    let b = parseFloat(secondNumber);
+    let result = operate(operator, a, b);
+    screen.textContent = result;
+
+    firstNumber = String(result);
+    secondNumber = "";
+    operator = null;
 });
 
 
