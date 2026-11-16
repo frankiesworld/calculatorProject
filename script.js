@@ -1,6 +1,8 @@
 let firstNumber = "";
 let secondNumber = "";
 let operator = null;
+let justCalculated = false;
+
 
 //----------------------------------------------- logic for the calculator
 
@@ -75,6 +77,12 @@ const digits = document.querySelectorAll('.digit');
 digits.forEach((digit) => {
     digit.addEventListener('click', () => {
 
+
+        if (justCalculated === true) {
+            firstNumber = "";
+            justCalculated = false;
+        }
+
         if (operator === null) {
             firstNumber += digit.textContent;
             screen.textContent = firstNumber;
@@ -89,6 +97,8 @@ digits.forEach((digit) => {
 const signs = document.querySelectorAll('.sign');
 signs.forEach((sign) => {
     sign.addEventListener('click', () => {
+
+        justCalculated = false;
 
     if( firstNumber === "") {
         return;
@@ -111,7 +121,7 @@ equal.addEventListener('click', () => {
     }
 
     calculate();
-
+    justCalculated = true;
     operator = null;
 });
 
